@@ -1,13 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import AuthInput from "~/components/AuthInput";
 import Link from "next/link";
-import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
 export default function signUp() {
-  const [showPassword, setShowPassword] = useState(false);
-
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
