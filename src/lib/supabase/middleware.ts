@@ -2,6 +2,8 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function updateSession(request: NextRequest) {
+  const path = request.nextUrl.pathname;
+
   let supabaseResponse = NextResponse.next({
     request,
   });
@@ -32,6 +34,14 @@ export async function updateSession(request: NextRequest) {
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
+  // Auth paths - redirect to /app if authenticated
+  if (path.startsWith("/login") || path.startsWith("/signup")) {
+    if (user) {
+      return NextResponse.redirect(new URL("/app", request.url));
+    }
+    return supabaseResponse;
+  }
 
   // Protect the /profile route
   if (request.nextUrl.pathname.startsWith("/profile") && !user) {
