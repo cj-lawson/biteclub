@@ -17,7 +17,21 @@ export interface AuthInputProps {
 
 export interface AuthResponse {
   error?: string;
-  success?: boolean;
+  data?: {
+    user: {
+      id: string;
+      email: string;
+    } | null;
+  };
+}
+
+export interface LoginRequest {
+  email: string;
+  password: string;
+}
+
+export interface SignUpRequest extends LoginRequest {
+  displayName: string;
 }
 
 export interface UserProfile {

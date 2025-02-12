@@ -44,7 +44,7 @@ export async function updateSession(request: NextRequest) {
   }
 
   // Protect the /profile route
-  if (request.nextUrl.pathname.startsWith("/profile") && !user) {
+  if (request.nextUrl.pathname.startsWith("/dashboard") && !user) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
     return NextResponse.redirect(url);

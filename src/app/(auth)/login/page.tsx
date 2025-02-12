@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import AuthInput from "~/components/AuthInput";
+import AuthInput from "~/app/components/AuthInput";
 
 export default function Login() {
   return (
