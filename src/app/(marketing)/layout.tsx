@@ -2,9 +2,6 @@ import "~/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
-import { redirect } from "next/navigation";
-
-import { createClient } from "~/lib/supabase/server";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -15,13 +12,6 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const supabase = await createClient();
-
-  const { data, error } = await supabase.auth.getUser();
-  if (data.user) {
-    redirect("/dashboard");
-  }
-
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>{children}</body>
