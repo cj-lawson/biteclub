@@ -1,9 +1,14 @@
 "use client";
 
 import AuthInput from "~/app/components/AuthInput";
+import { signup } from "~/app/actions/auth/index";
+import { useActionState } from "react";
+
 import Link from "next/link";
 
 export default function signUp() {
+  const [lastResult, action] = useActionState(signup, undefined);
+
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -13,8 +18,16 @@ export default function signUp() {
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form action={"submit"} className="space-y-6">
+        <form action={action} className="space-y-6">
           <div>
+            <AuthInput
+              label="Display name"
+              type="text"
+              id="displayName"
+              name="displayName"
+              required
+              placeholder="Enter your display name"
+            />
             <AuthInput
               label="Email address"
               type="email"

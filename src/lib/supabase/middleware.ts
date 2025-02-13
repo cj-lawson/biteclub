@@ -2,27 +2,18 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function updateSession(request: NextRequest) {
-  const path = request.nextUrl.pathname;
-
-  let supabaseResponse = NextResponse.next({
-    request,
-  });
+  let supabaseResponse = NextResponse.next({ request });
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
-        getAll() {
-          return request.cookies.getAll();
-        },
-        setAll(cookiesToSet) {
+        getAll: () => request.cookies.getAll(),
+        setAll: (cookiesToSet) => {
           cookiesToSet.forEach(({ name, value }) =>
             request.cookies.set(name, value),
           );
-          supabaseResponse = NextResponse.next({
-            request,
-          });
           cookiesToSet.forEach(({ name, value, options }) =>
             supabaseResponse.cookies.set(name, value, options),
           );
@@ -35,27 +26,15 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Auth paths - redirect to /app if authenticated
-  if (path.startsWith("/login") || path.startsWith("/signup")) {
-    if (user) {
-      return NextResponse.redirect(new URL("/app", request.url));
-    }
-    return supabaseResponse;
-  }
-
-  // Protect the /profile route
-  if (request.nextUrl.pathname.startsWith("/dashboard") && !user) {
+  // Redirect authenticated users away from auth pages (e.g. /login or /auth) to /dashboard (or /app)
+  if (user && request.nextUrl.pathname.startsWith("/login")) {
     const url = request.nextUrl.clone();
-    url.pathname = "/login";
+    url.pathname = "/dashboard"; // or '/app' if that is your protected area
     return NextResponse.redirect(url);
   }
 
-  // Redirect unauthenticated users to /login if not already on auth-related pages
-  if (
-    !user &&
-    !request.nextUrl.pathname.startsWith("/login") &&
-    !request.nextUrl.pathname.startsWith("/auth")
-  ) {
+  // Protect the /dashboard route: redirect unauthenticated users to /login
+  if (request.nextUrl.pathname.startsWith("/dashboard") && !user) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
     return NextResponse.redirect(url);
@@ -63,3 +42,68 @@ export async function updateSession(request: NextRequest) {
 
   return supabaseResponse;
 }
+
+// import { createServerClient } from "@supabase/ssr";
+// import { NextResponse, type NextRequest } from "next/server";
+
+// export async function updateSession(request: NextRequest) {
+//   const path = request.nextUrl.pathname;
+
+//   let supabaseResponse = NextResponse.next({
+//     request,
+//   });
+
+//   const supabase = createServerClient(
+//     process.env.NEXT_PUBLIC_SUPABASE_URL!,
+//     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+//     {
+//       cookies: {
+//         getAll() {
+//           return request.cookies.getAll();
+//         },
+//         setAll(cookiesToSet) {
+//           cookiesToSet.forEach(({ name, value }) =>
+//             request.cookies.set(name, value),
+//           );
+//           supabaseResponse = NextResponse.next({
+//             request,
+//           });
+//           cookiesToSet.forEach(({ name, value, options }) =>
+//             supabaseResponse.cookies.set(name, value, options),
+//           );
+//         },
+//       },
+//     },
+//   );
+
+//   const {
+//     data: { user },
+//   } = await supabase.auth.getUser();
+
+//   // Auth paths - redirect to /app if authenticated
+//   if (request.nextUrl.pathname.startsWith("/login") && user) {
+//     const url = request.nextUrl.clone();
+//     url.pathname = "/dashboard";
+//     return NextResponse.redirect(url);
+//   }
+
+//   // Protect the /dashboard route
+//   if (request.nextUrl.pathname.startsWith("/dashboard") && !user) {
+//     const url = request.nextUrl.clone();
+//     url.pathname = "/login";
+//     return NextResponse.redirect(url);
+//   }
+
+//   // Redirect unauthenticated users to /login if not already on auth-related pages
+//   if (
+//     !user &&
+//     !request.nextUrl.pathname.startsWith("/login") &&
+//     !request.nextUrl.pathname.startsWith("/auth")
+//   ) {
+//     const url = request.nextUrl.clone();
+//     url.pathname = "/login";
+//     return NextResponse.redirect(url);
+//   }
+
+//   return supabaseResponse;
+// }

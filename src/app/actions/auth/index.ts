@@ -1,12 +1,10 @@
-"user server";
+"use server";
 
 import { createClient } from "~/lib/supabase/server";
 import { redirect } from "next/navigation";
-import { db } from "~/server/db";
-import { users, profiles } from "~/server/db/schema";
 import { revalidatePath } from "next/cache";
 
-export async function signUp(formData: FormData) {
+export async function signup(prevState: unknown, formData: FormData) {
   const supabase = await createClient();
 
   const data = {
@@ -14,12 +12,11 @@ export async function signUp(formData: FormData) {
     password: formData.get("password") as string,
   };
 
-  const { error } = await supabase.auth.signUp(data);
+  const { error, data: session } = await supabase.auth.signUp(data);
 
-  if (error) {
+  if (session?.user) {
+    redirect(`/dashboard`);
+  } else {
     redirect("/error?message=an uknown error has occured");
   }
-
-  revalidatePath("/", "layout");
-  redirect("/");
 }
