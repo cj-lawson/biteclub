@@ -6,7 +6,7 @@ import { useActionState } from "react";
 
 import Link from "next/link";
 
-export default function signUp() {
+export default function SignUp() {
   const [data, action, isPending] = useActionState(signup, undefined);
   console.log(data);
 

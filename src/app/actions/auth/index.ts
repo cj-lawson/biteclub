@@ -13,7 +13,7 @@ export async function signup(prevState: unknown, formData: FormData) {
     password: formData.get("password") as string,
   };
 
-  const { error, data: session } = await supabase.auth.signUp(data);
+  const { data: session } = await supabase.auth.signUp(data);
 
   if (session?.user) {
     redirect(`/dashboard`);
