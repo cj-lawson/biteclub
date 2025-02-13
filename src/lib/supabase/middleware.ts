@@ -31,7 +31,6 @@ export async function updateSession(request: NextRequest) {
   const isGuestRoute = guestRoutes.includes(pathname);
 
   const session = await supabase.auth.getUser();
-  console.log(session);
 
   if (isProtectedRoute && session.error) {
     return NextResponse.redirect(new URL("/login", request.url));

@@ -17,10 +17,13 @@ export default function PublicNavbar() {
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <div className="space-x-4">
-            <Link href="/login" className="text-sm font-semibold">
-              Login
+            <Link
+              href="/login"
+              className="rounded-full border border-solid border-[#E8E9EB] bg-white px-6 py-3 text-sm font-semibold"
+            >
+              Log in
             </Link>
-            <button className="rounded-full bg-[#EEECE8] px-6 py-3 text-sm font-bold text-green-900">
+            <button className="bg-brand-500 rounded-full px-6 py-3 text-sm font-bold text-white">
               <Link href="/signup">Sign up</Link>
             </button>
           </div>

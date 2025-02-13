@@ -5,6 +5,7 @@ import { signup } from "~/app/actions/auth/index";
 import { useActionState } from "react";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function SignUp() {
   const [data, action, isPending] = useActionState(signup, undefined);
@@ -12,23 +13,33 @@ export default function SignUp() {
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h1 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-green-600">
-          Join BiteClub
+      <div className="space-y-2 text-center sm:mx-auto sm:w-full sm:max-w-sm">
+        <Image
+          src="/logo-mark.svg"
+          width={44}
+          height={44}
+          alt="Biteclube logo mark"
+          className="ml-auto mr-auto"
+        />
+        <h1 className="text-center text-2xl/9 font-bold tracking-tight">
+          Create a free account
         </h1>
+        <p className="opacity-70">Provide your email and choose a password</p>
       </div>
 
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
         <form action={action} className="space-y-6">
           <div>
             <AuthInput
-              label="Display name"
+              label="Username"
               type="text"
-              id="displayName"
-              name="displayName"
+              id="userame"
+              name="userName"
               required
-              placeholder="Enter your display name"
+              placeholder="Pick a unique username"
             />
+          </div>
+          <div>
             <AuthInput
               label="Email address"
               type="email"
@@ -54,7 +65,7 @@ export default function SignUp() {
             <button
               type="submit"
               disabled={isPending}
-              className="flex w-full justify-center rounded-md bg-green-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="bg-brand-500 flex w-full justify-center rounded-full px-3 py-3 text-sm/6 font-semibold text-white shadow-sm hover:brightness-125 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Create free account
             </button>

@@ -27,7 +27,7 @@ const AuthInput: React.FC<AuthInputProps> = ({
         onChange={onChange}
         placeholder={placeholder}
         required={required}
-        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm placeholder-gray-400 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
+        className="placeholder-body-text mt-1.5 block w-full rounded-full rounded-md border border-solid border-[#E8E9EB] px-3 py-4 text-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500"
       />
       {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
     </div>
