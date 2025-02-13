@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function () {
+export default function AppNavbar() {
   return (
     <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-10 w-full px-3 py-2 font-[family-name:var(--font-geist-sans)] backdrop-blur">
       <div className="container ml-auto mr-auto flex h-14 max-w-screen-lg items-center">
