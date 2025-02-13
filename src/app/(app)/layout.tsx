@@ -1,5 +1,7 @@
 import "~/styles/globals.css";
 
+import AppNavbar from "../components/navigation/AppNavbar";
+
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
@@ -14,7 +16,10 @@ export default async function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <AppNavbar />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
