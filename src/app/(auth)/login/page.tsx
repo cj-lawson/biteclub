@@ -13,13 +13,16 @@ export default function Login() {
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="space-y-2 text-center sm:mx-auto sm:w-full sm:max-w-sm">
-        <Image
-          src="/logo-mark.svg"
-          width={44}
-          height={44}
-          alt="Biteclube logo mark"
-          className="ml-auto mr-auto"
-        />
+        <Link href="/">
+          <Image
+            src="/logo-mark.svg"
+            width={44}
+            height={44}
+            alt="Biteclube logo mark"
+            className="ml-auto mr-auto"
+          />
+        </Link>
+
         <h1 className="text-center text-2xl/9 font-bold tracking-tight">
           Log into BiteClub
         </h1>
