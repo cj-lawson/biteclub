@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -26,6 +27,15 @@ export default function Hero() {
                   Get started for free
                 </Link>
               </div>
+            </div>
+            <div className="mt-16 w-full">
+              <Image
+                width={900}
+                height={358}
+                src="/hero-img.svg"
+                alt="Biteclube logo mark"
+                className="ml-auto mr-auto"
+              />
             </div>
           </div>
         </div>
