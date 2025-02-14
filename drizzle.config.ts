@@ -8,5 +8,5 @@ export default {
   dbCredentials: {
     url: env.DATABASE_URL,
   },
-  tablesFilter: ["biteclub_*"],
+  tablesFilter: ["biteclub_*", "profiles", "public"],
 } satisfies Config;
