@@ -1,3 +1,5 @@
+import { signOut } from "~/app/actions/auth/index";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,12 +19,14 @@ export default function AppNavbar() {
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <div className="space-x-4">
-            <Link href="/login" className="text-sm font-semibold">
-              Login
-            </Link>
-            <button className="rounded-full bg-[#F9F4F2] px-6 py-3 text-sm font-bold">
-              <Link href="/signup">Sign up</Link>
-            </button>
+            <form action={signOut}>
+              <button
+                type="submit"
+                className="rounded-full bg-[#F9F4F2] px-6 py-3 text-sm font-bold"
+              >
+                Sign out
+              </button>
+            </form>
           </div>
         </div>
       </div>

@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import AuthInput from "~/app/components/AuthInput";
-import { signup } from "~/app/actions/auth/index";
+import { login } from "~/app/actions/auth/index";
 import { useActionState } from "react";
 
 import Image from "next/image";
 
 export default function Login() {
-  const [data, action, isPending] = useActionState(signup, undefined);
+  const [data, action, isPending] = useActionState(login, undefined);
   console.log(data);
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
