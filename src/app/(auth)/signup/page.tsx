@@ -39,7 +39,7 @@ export default function SignUp() {
               id="userame"
               name="userName"
               required
-              placeholder="Pick a unique username"
+              placeholder="Create a username"
             />
           </div>
           <div>
@@ -60,7 +60,7 @@ export default function SignUp() {
               id="password"
               name="password"
               required
-              placeholder="Enter your password"
+              placeholder="Create a password"
             />
           </div>
 

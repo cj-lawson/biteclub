@@ -1,3 +1,2 @@
-export * from "./auth";
 export * from "./profiles";
-export * from "./relations";
+export * from "./recipes";

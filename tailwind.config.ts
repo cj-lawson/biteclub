@@ -8,8 +8,9 @@ export default {
       colors: {
         "brand-500": "#0E8911",
         "input-default": "#F6F8FC",
-        "body-text": "757575",
+        "body-text": "#757575",
         "main-text": "010F07",
+        "placeholder-text": "#717680",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
