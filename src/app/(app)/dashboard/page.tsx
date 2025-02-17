@@ -2,6 +2,7 @@ import { getCurrentUserId } from "~/lib/auth";
 import { getUserRecipes } from "~/data/index";
 
 import RecipeCard from "../components/RecipeCard";
+import ImportRecipeButton from "../components/AddRecipeButton";
 
 export default async function DashboardPage() {
   const userId = await getCurrentUserId();
@@ -20,6 +21,11 @@ export default async function DashboardPage() {
               <RecipeCard name={recipe.name} description={recipe.description} />
             </div>
           ))}
+        </div>
+        <div className="fixed bottom-0 left-0 flex h-[80px] w-full bg-gradient-to-t from-white to-transparent">
+          <div className="ml-auto mr-auto">
+            <ImportRecipeButton />
+          </div>
         </div>
       </div>
     </div>
