@@ -1,5 +1,24 @@
 import { CheerioAPI, load } from "cheerio";
 
+interface JSONLDRecipe {
+  /**
+   * In JSON-LD, @type can be a string or an array of strings.
+   */
+  "@type"?: string | string[];
+
+  /**
+   * JSON-LD can nest graphs.
+   * If there's a @graph, it's often an array of further JSON-LD objects.
+   */
+  "@graph"?: JSONLDRecipe[];
+
+  /**
+   * Any other fields (name, description, ingredient, etc.).
+   * We don't strictly type them here, but you can refine later as needed.
+   */
+  [key: string]: unknown;
+}
+
 export async function extractRecipeFromURL(url: string) {
   const html = await fetchHTML(url);
 
@@ -32,7 +51,7 @@ async function fetchHTML(url: string): Promise<string> {
  * parses JSON, and returns the first object whose @type includes "Recipe".
  * If nothing is found, returns null.
  */
-function findRecipeJSONLD($: CheerioAPI): any {
+function findRecipeJSONLD($: CheerioAPI): JSONLDRecipe | null {
   let recipeData = null;
 
   $('script[type="application/ld+json"]').each((_, el) => {

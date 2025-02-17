@@ -17,4 +17,5 @@ export async function createRecipeAction(formData: FormData) {
   }
 
   const newRecipe = await createRecipe(userId, name, description);
+  console.log(newRecipe);
 }

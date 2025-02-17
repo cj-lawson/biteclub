@@ -4,6 +4,7 @@ export default function NewRecipePage() {
   async function handleSubmit(formData: FormData) {
     "use server";
     const newRecipe = await createRecipeAction(formData);
+    console.log(newRecipe);
   }
 
   return (

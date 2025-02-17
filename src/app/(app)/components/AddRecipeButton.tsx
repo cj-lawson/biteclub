@@ -2,12 +2,7 @@
 
 import React, { useState, Fragment } from "react";
 import { useRouter } from "next/navigation";
-import {
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-  Transition,
-} from "@headlessui/react";
+import { Dialog, DialogTitle, Transition } from "@headlessui/react";
 import { GlobeAltIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
 
 export default function ImportRecipeButton() {
@@ -72,8 +67,8 @@ export default function ImportRecipeButton() {
 
       // Optionally, close step 2 modal or navigate somewhere
       closeStep2();
-    } catch (error: any) {
-      alert(`Error importing recipe: ${error.message}`);
+    } catch (error) {
+      alert(`Error importing recipe: ${error}`);
     } finally {
       setLoading(false);
     }

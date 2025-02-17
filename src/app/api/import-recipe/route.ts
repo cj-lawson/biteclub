@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getCurrentUserId } from "~/lib/auth";
 import { scrapeAndCreateRecipe } from "~/lib/scrapeAndCreateRecipe";
-import { createClient } from "~/lib/supabase/client";
 
 export async function POST(request: NextRequest) {
   try {
@@ -30,7 +29,7 @@ export async function POST(request: NextRequest) {
     const createdRecipe = await scrapeAndCreateRecipe(url, userId);
 
     return NextResponse.json({ recipe: createdRecipe });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (error) {
+    return NextResponse.json({ error: error }, { status: 500 });
   }
 }
