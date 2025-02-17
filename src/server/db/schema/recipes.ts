@@ -1,9 +1,12 @@
 // src/server/db/schema/recipes.ts
 import { pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 import { profiles } from "./profiles";
+import { sql } from "drizzle-orm";
 
 export const recipes = pgTable("recipes", {
-  id: uuid("id").primaryKey().notNull(),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   profile_id: uuid("profile_id")
     .references(() => profiles.id, { onDelete: "cascade" })
     .notNull(),
