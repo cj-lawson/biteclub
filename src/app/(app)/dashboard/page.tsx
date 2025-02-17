@@ -1,28 +1,27 @@
 import { getCurrentUserId } from "~/lib/auth";
 import { getUserRecipes } from "~/data/index";
 
+import RecipeCard from "../components/RecipeCard";
+
 export default async function DashboardPage() {
-  // 1. Grab the current user's ID via Supabase Auth
   const userId = await getCurrentUserId();
   if (!userId) {
-    // handle unauthed state, e.g. redirect to /login or throw an error
     throw new Error("Not authenticated");
   }
 
-  // 2. Query Drizzle for the user's recipes
   const userRecipes = await getUserRecipes(userId);
 
   return (
     <div className="min-w-screen-xl flex min-h-screen flex-col justify-items-center gap-16 px-3 pb-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="row-start-2 flex flex-col items-center sm:items-start">
-        <h1>Your Recipes</h1>
-        {userRecipes.map((recipe) => (
-          <div key={recipe.id}>
-            <h2>{recipe.name}</h2>
-            <p>{recipe.description}</p>
-          </div>
-        ))}
-      </main>
+      <div className="container relative ml-auto mr-auto max-w-screen-lg">
+        <div className="mt-20 grid min-w-full grid-cols-2 justify-items-stretch gap-x-8 gap-y-16 sm:grid-cols-3">
+          {userRecipes.map((recipe) => (
+            <div key={recipe.id}>
+              <RecipeCard name={recipe.name} description={recipe.description} />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
