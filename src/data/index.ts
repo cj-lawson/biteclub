@@ -11,9 +11,12 @@ export async function getUserRecipes(userId: string) {
 export async function createRecipe(
   profile_id: string,
   name: string,
-  description: string,
+  description?: string,
+  imageUrl?: string,
 ) {
   const [newRecipe] = await db
     .insert(recipes)
-    .values({ profile_id, name, description });
+    .values({ profile_id, name, description, imageUrl })
+    .returning();
+  return newRecipe;
 }

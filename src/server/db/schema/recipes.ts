@@ -12,6 +12,7 @@ export const recipes = pgTable("recipes", {
     .notNull(),
   name: text("name").notNull(),
   description: text("description"),
+  imageUrl: text("image_url"),
   created_at: timestamp("created_at", {
     withTimezone: true,
     mode: "string",

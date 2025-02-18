@@ -1,8 +1,8 @@
 import { getCurrentUserId } from "~/lib/auth";
 import { getUserRecipes } from "~/data/index";
 
-import RecipeCard from "../components/RecipeCard";
-import ImportRecipeButton from "../components/AddRecipeButton";
+import RecipeCard from "../_components/RecipeCard";
+import ImportRecipeButton from "./_components/AddRecipeButton";
 
 export default async function DashboardPage() {
   const userId = await getCurrentUserId();
@@ -18,7 +18,11 @@ export default async function DashboardPage() {
         <div className="mt-20 grid min-w-full grid-cols-2 justify-items-stretch gap-x-8 gap-y-16 sm:grid-cols-3">
           {userRecipes.map((recipe) => (
             <div key={recipe.id}>
-              <RecipeCard name={recipe.name} description={recipe.description} />
+              <RecipeCard
+                name={recipe.name}
+                description={recipe.description}
+                img={recipe.imageUrl}
+              />
             </div>
           ))}
         </div>

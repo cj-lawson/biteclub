@@ -8,6 +8,13 @@
       "when": 1739579531637,
       "tag": "0000_military_blacklash",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1739823480833,
+      "tag": "0001_smart_mongu",
+      "breakpoints": true
     }
   ]
 }

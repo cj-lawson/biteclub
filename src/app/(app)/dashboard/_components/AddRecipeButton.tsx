@@ -41,7 +41,7 @@ export default function ImportRecipeButton() {
 
   const handleCreateClick = () => {
     // Possibly navigate to some route for creating a recipe from scratch
-    router.push("/create-recipe");
+    router.push("/recipes/new");
   };
 
   // Calls your import-recipe API

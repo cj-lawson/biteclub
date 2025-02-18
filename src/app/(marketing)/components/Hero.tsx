@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="relative w-full overflow-clip">
+    <div className="w-full overflow-clip bg-[#F9F4F2]">
       <div className="mx-auto max-w-screen-xl">
         <div className="relative sm:overflow-hidden sm:rounded-2xl">
-          <div className="relative px-6 py-10 sm:py-12 lg:px-8 lg:py-16">
+          <div className="relative px-6 pt-10 sm:pt-12 lg:px-8 lg:pt-16">
             <div className="mx-auto max-w-lg">
               <h1 className="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 <span className="block">All your recipes</span>
@@ -28,10 +28,10 @@ export default function Hero() {
                 </Link>
               </div>
             </div>
-            <div className="mt-16 w-full">
+            <div className="relative w-full">
               <Image
-                width={900}
-                height={358}
+                width={1100}
+                height={558}
                 src="/hero-img.svg"
                 alt="Biteclube logo mark"
                 className="ml-auto mr-auto"
