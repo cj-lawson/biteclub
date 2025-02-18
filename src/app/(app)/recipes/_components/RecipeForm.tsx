@@ -63,11 +63,7 @@ export default function RecipeForm({ onSubmit }: RecipeFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-10">
-      <ImageUploadField
-        label="Cover Photo"
-        id="mainImage"
-        onChange={handleImageUpload}
-      />
+      <ImageUploadField onChange={handleImageUpload} />
       <InputField
         label="Recipe Title"
         id="name"
