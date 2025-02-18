@@ -9,8 +9,8 @@ interface RecipeProps {
 export default function RecipeCard({ img, name, description }: RecipeProps) {
   return (
     <div className="justify-items-stretch">
-      <div className="min-height-12 relative rounded-lg">
-        <RecipeImage src={img} width={90} height={90} />
+      <div className="min-height-12 relative h-full w-full rounded-lg">
+        <RecipeImage src={img} />
       </div>
       <div className="mt-3">
         <p className="text-md truncate font-medium leading-relaxed">{name}</p>

@@ -16,5 +16,14 @@ export default function RecipeImage({ src, width, height }: RecipeImageProps) {
     );
   }
 
-  return <Image src={src} width={width} height={height} alt={"food-image"} />;
+  return (
+    <div className="relative h-[200px] w-full rounded-md">
+      <Image
+        src={src}
+        fill
+        alt={"food-image"}
+        className="rounded-md object-cover"
+      />
+    </div>
+  );
 }
