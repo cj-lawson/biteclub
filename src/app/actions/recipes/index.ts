@@ -33,7 +33,7 @@ export async function createRecipeAction(formData: FormData) {
       await supabase
     ).storage
       .from("recipe-images")
-      .upload("fileName", file, {
+      .upload(fileName, file, {
         contentType: file.type,
       });
 

@@ -4,19 +4,15 @@ import { useState } from "react";
 import { PhotoIcon } from "@heroicons/react/24/solid";
 
 interface ImageUploadFieldProps {
-  label: string;
-  id: string;
   existingImage?: string;
   onChange: (file: File) => void;
 }
 
 export function ImageUploadField({
-  label,
-  id,
   existingImage,
   onChange,
 }: ImageUploadFieldProps) {
-  const [preview, setPreview] = useState<string | null>(existingImage || null);
+  const [preview, setPreview] = useState<string | null>(existingImage ?? null);
   const [dragging, setDragging] = useState(false);
 
   const handleFileChange = (file: File | null) => {
@@ -35,14 +31,14 @@ export function ImageUploadField({
   };
 
   const handleFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
+    const file = e.target.files?.[0] ?? null;
     handleFileChange(file);
   };
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setDragging(false);
-    const file = e.dataTransfer.files?.[0] || null;
+    const file = e.dataTransfer.files?.[0] ?? null;
     handleFileChange(file);
   };
 
@@ -85,7 +81,7 @@ export function ImageUploadField({
                   htmlFor="file-upload"
                   className="relative cursor-pointer rounded-md font-semibold text-green-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-green-600 focus-within:ring-offset-2 hover:text-green-500"
                 >
-                  <span>Upload Cover Photo</span>
+                  <span>Upload Recipe Photo</span>
                   <input
                     id="file-upload"
                     name="file-upload"

@@ -37,6 +37,7 @@ export async function extractRecipeFromURL(url: string) {
 
   // Create the recipe in supabase
   const supabaseData = buildSupabaseRecipeData(extracted, "1234");
+  console.log(supabaseData);
 
   return extracted;
 }
