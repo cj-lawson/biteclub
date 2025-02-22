@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import AuthInput from "~/app/components/AuthInput";
+import AuthInput from "~/app/_components/ui/AuthInput";
 import { login } from "~/app/actions/auth/index";
 import { useActionState } from "react";
 

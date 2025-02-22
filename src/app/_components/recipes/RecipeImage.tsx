@@ -7,17 +7,17 @@ interface RecipeImageProps {
   height?: number;
 }
 
-export default function RecipeImage({ src, width, height }: RecipeImageProps) {
+export default function RecipeImage({ src }: RecipeImageProps) {
   if (!src) {
     return (
-      <div className="flex h-[200px] items-center justify-center bg-gray-100">
+      <div className="flex h-[140px] w-full items-center justify-center rounded-md bg-gray-100 sm:h-[200px]">
         <PhotoIcon width={44} height={44} className="text-gray-300" />
       </div>
     );
   }
 
   return (
-    <div className="relative h-[200px] w-full rounded-md">
+    <div className="relative h-[140px] w-full rounded-md sm:h-[200px]">
       <Image
         src={src}
         fill

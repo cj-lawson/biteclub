@@ -1,6 +1,11 @@
-import "~/styles/globals.css";
+import {
+  SidebarProvider,
+  SidebarTrigger,
+  SidebarInset,
+} from "~/app/_components/ui/sidebar";
+import { AppSidebar } from "../../_components/ui/app-sidebar";
 
-import AppNavbar from "../components/navigation/AppNavbar";
+import "~/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
@@ -17,8 +22,13 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
-        <AppNavbar />
-        <main>{children}</main>
+        <SidebarProvider>
+          <AppSidebar />
+          <SidebarTrigger />
+          <SidebarInset>
+            <main>{children}</main>
+          </SidebarInset>
+        </SidebarProvider>
       </body>
     </html>
   );

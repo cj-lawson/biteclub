@@ -1,6 +1,6 @@
 "use client";
 
-import AuthInput from "~/app/components/AuthInput";
+import AuthInput from "~/app/_components/ui/AuthInput";
 import { signup } from "~/app/actions/auth/index";
 import { useActionState } from "react";
 

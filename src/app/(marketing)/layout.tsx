@@ -1,6 +1,6 @@
 import "~/styles/globals.css";
 
-import PublicNavbar from "../components/navigation/PublicNavbar";
+import PublicNavbar from "../_components/navigation/PublicNavbar";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
