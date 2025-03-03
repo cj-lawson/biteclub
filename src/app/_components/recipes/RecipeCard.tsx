@@ -8,15 +8,15 @@ interface RecipeProps {
 
 export default function RecipeCard({ img, name, description }: RecipeProps) {
   return (
-    <div className="justify-items-stretch">
-      <div className="min-height-12 relative h-full w-full rounded-lg">
+    <div className="flex h-full w-full flex-col overflow-hidden">
+      <div className="relative aspect-video w-full overflow-hidden rounded-lg">
         <RecipeImage src={img} />
       </div>
-      <div className="mt-2">
-        <p className="text-md truncate font-medium leading-normal">{name}</p>
-        <div className="flex items-center gap-1">
-          <p className="text-sm leading-normal text-gray-500">{description}</p>
-        </div>
+      <div className="mt-2 flex flex-col">
+        <p className="truncate font-medium leading-tight">{name}</p>
+        {description && (
+          <p className="line-clamp-2 text-sm text-gray-500">{description}</p>
+        )}
       </div>
     </div>
   );

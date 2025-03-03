@@ -1,10 +1,4 @@
-import {
-  SidebarProvider,
-  SidebarTrigger,
-  SidebarInset,
-} from "~/app/_components/ui/sidebar";
-import { AppSidebar } from "../../_components/ui/app-sidebar";
-
+import { SidebarLayout } from "~/app/_components/ui/SideBarLayout";
 import "~/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
@@ -22,13 +16,8 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
-        <SidebarProvider>
-          <AppSidebar />
-          <SidebarTrigger />
-          <SidebarInset>
-            <main>{children}</main>
-          </SidebarInset>
-        </SidebarProvider>
+        <SidebarLayout>{children}</SidebarLayout>
+        {/* <main>{children}</main> */}
       </body>
     </html>
   );
