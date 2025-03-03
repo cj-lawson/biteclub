@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Sidebar } from "./Sidebar";
+import { Sidebar } from "./AppSidebar";
 
 interface SidebarLayoutProps {
   children: React.ReactNode;

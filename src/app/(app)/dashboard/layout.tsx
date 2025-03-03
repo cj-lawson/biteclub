@@ -1,4 +1,4 @@
-import { SidebarLayout } from "~/app/_components/ui/SideBarLayout";
+import { SidebarLayout } from "~/app/_components/ui/Sidebar-layout";
 import "~/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
