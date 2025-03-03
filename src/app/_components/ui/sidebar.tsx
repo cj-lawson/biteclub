@@ -9,7 +9,6 @@ import {
   BookOpen,
   Calendar,
   ShoppingCart,
-  Heart,
   Settings,
   Search,
   PlusCircle,
@@ -35,7 +34,6 @@ const mainNavItems = [
 ];
 
 const secondaryNavItems = [
-  { href: "/favorites", icon: <Heart size={20} />, label: "Favorites" },
   { href: "/search", icon: <Search size={20} />, label: "Search" },
   { href: "/add-recipe", icon: <PlusCircle size={20} />, label: "Add" },
   { href: "/settings", icon: <Settings size={20} />, label: "Settings" },
