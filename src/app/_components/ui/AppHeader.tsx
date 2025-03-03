@@ -13,7 +13,7 @@ import {
 
 export function AppHeader() {
   return (
-    <div className="sticky top-0 z-30 flex h-16 w-full items-center justify-between bg-white px-4 sm:px-6 dark:bg-gray-900">
+    <div className="sticky top-0 z-30 flex h-16 w-full flex-col items-center justify-between bg-white px-4 sm:flex-row sm:px-6 dark:bg-gray-900">
       {/* Search Bar */}
       <div className="relative flex w-full max-w-md items-center sm:max-w-sm md:max-w-md lg:max-w-lg">
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -27,7 +27,7 @@ export function AppHeader() {
       </div>
 
       {/* Avatar with Dropdown */}
-      <div className="ml-4">
+      {/* <div className="ml-4">
         <DropdownMenu>
           <DropdownMenuTrigger className="flex items-center rounded-full outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
             <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
@@ -51,7 +51,7 @@ export function AppHeader() {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      </div>
+      </div> */}
     </div>
   );
 }

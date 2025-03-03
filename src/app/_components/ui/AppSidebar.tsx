@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { SidebarAvatar } from "./SidebarAvatar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -105,6 +106,7 @@ export function Sidebar() {
               active={pathname.startsWith(item.href)}
             />
           ))}
+          <SidebarAvatar />
         </div>
       </div>
 
@@ -126,16 +128,6 @@ export function Sidebar() {
           ))}
         </div>
       </div>
-
-      {/* Mobile More Menu Button */}
-      {/* <div className="fixed bottom-20 right-4 z-50 sm:hidden">
-        <button
-          onClick={() => setMobileMoreOpen(!mobileMoreOpen)}
-          className="bg-primary text-primary-foreground flex h-12 w-12 items-center justify-center rounded-full shadow-lg"
-        >
-          <Menu size={24} />
-        </button>
-      </div> */}
 
       {/* Mobile More Menu */}
       {mobileMoreOpen && (
