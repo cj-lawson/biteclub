@@ -7,7 +7,7 @@ import Image from "next/image";
 import { cn } from "~/lib/utils";
 import {
   BookOpen,
-  ChefHat,
+  //   ChefHat,
   Calendar,
   ShoppingCart,
   Heart,
@@ -15,7 +15,6 @@ import {
   Search,
   PlusCircle,
   Home,
-  UtensilsCrossed,
   Menu,
 } from "lucide-react";
 import {
@@ -43,7 +42,7 @@ const secondaryNavItems = [
   { href: "/settings", icon: <Settings size={20} />, label: "Settings" },
 ];
 
-export function SideBar({ width = "w-16" }: { width?: string }) {
+export function Sidebar() {
   const pathname = usePathname();
   const [mobileMoreOpen, setMobileMoreOpen] = React.useState(false);
 

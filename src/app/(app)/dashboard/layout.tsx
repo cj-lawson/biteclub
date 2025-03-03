@@ -17,7 +17,6 @@ export default async function RootLayout({
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
         <SidebarLayout>{children}</SidebarLayout>
-        {/* <main>{children}</main> */}
       </body>
     </html>
   );
