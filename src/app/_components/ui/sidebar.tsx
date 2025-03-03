@@ -7,7 +7,6 @@ import Image from "next/image";
 import { cn } from "~/lib/utils";
 import {
   BookOpen,
-  //   ChefHat,
   Calendar,
   ShoppingCart,
   Heart,
