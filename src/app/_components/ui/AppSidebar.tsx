@@ -35,9 +35,7 @@ const mainNavItems = [
 ];
 
 const secondaryNavItems = [
-  { href: "/search", icon: <Search size={20} />, label: "Search" },
   { href: "/add-recipe", icon: <PlusCircle size={20} />, label: "Add" },
-  { href: "/settings", icon: <Settings size={20} />, label: "Settings" },
 ];
 
 export function Sidebar() {
