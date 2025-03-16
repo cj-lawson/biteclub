@@ -25,18 +25,18 @@ import {
 
 const mainNavItems = [
   {
-    href: "dashboard/my-recipes",
+    href: "my-recipes",
     icon: <Home size={24} />,
     label: "My recipes",
   },
   {
-    href: "dashboard/cookbooks",
+    href: "cookbooks",
     icon: <BookOpen size={24} />,
     label: "Cookbooks",
   },
-  { href: "/meal-planner", icon: <Calendar size={24} />, label: "Planner" },
+  { href: "meal-planner", icon: <Calendar size={24} />, label: "Planner" },
   {
-    href: "/shopping-list",
+    href: "shopping-list",
     icon: <ShoppingCart size={24} />,
     label: "Shopping",
   },
