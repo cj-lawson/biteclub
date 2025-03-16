@@ -22,14 +22,14 @@ export function AppHeader() {
         <input
           type="text"
           placeholder="Search recipes..."
-          className="w-full rounded-md border border-gray-200 bg-gray-50 py-2 pl-10 pr-4 text-sm outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:focus:border-green-500"
+          className="w-full rounded-md border border-gray-200 bg-gray-50 py-2 pl-10 pr-4 text-sm outline-hidden focus:border-green-500 focus:ring-1 focus:ring-green-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:focus:border-green-500"
         />
       </div>
 
       {/* Avatar with Dropdown */}
       {/* <div className="ml-4">
         <DropdownMenu>
-          <DropdownMenuTrigger className="flex items-center rounded-full outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+          <DropdownMenuTrigger className="flex items-center rounded-full outline-hidden focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
             <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
               <User className="h-5 w-5 text-gray-500 dark:text-gray-400" />
             </div>

@@ -79,7 +79,7 @@ export function ImageUploadField({
                 />
                 <label
                   htmlFor="file-upload"
-                  className="relative cursor-pointer rounded-md font-semibold text-green-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-green-600 focus-within:ring-offset-2 hover:text-green-500"
+                  className="relative cursor-pointer rounded-md font-semibold text-green-600 focus-within:outline-hidden focus-within:ring-2 focus-within:ring-green-600 focus-within:ring-offset-2 hover:text-green-500"
                 >
                   <span>Upload Recipe Photo</span>
                   <input

@@ -24,8 +24,16 @@ import {
 } from "~/app/_components/ui/tooltip";
 
 const mainNavItems = [
-  { href: "/", icon: <Home size={24} />, label: "Home" },
-  { href: "/recipes", icon: <BookOpen size={24} />, label: "Recipes" },
+  {
+    href: "dashboard/my-recipes",
+    icon: <Home size={24} />,
+    label: "My recipes",
+  },
+  {
+    href: "dashboard/cookbooks",
+    icon: <BookOpen size={24} />,
+    label: "Cookbooks",
+  },
   { href: "/meal-planner", icon: <Calendar size={24} />, label: "Planner" },
   {
     href: "/shopping-list",
@@ -46,7 +54,7 @@ export function Sidebar() {
     <>
       {/* Desktop Sidebar */}
       <div
-        className={`border-r-border bg-background fixed left-0 top-0 z-40 hidden h-screen w-20 flex-col items-center border-r py-3 shadow-sm sm:flex`}
+        className={`border-r-border bg-background fixed top-0 left-0 z-40 hidden h-screen w-20 flex-col items-center border-r py-3 shadow-xs sm:flex`}
       >
         {/* App logo */}
         <div className="mb-2 flex items-center justify-center">
@@ -129,7 +137,7 @@ export function Sidebar() {
 
       {/* Mobile More Menu */}
       {mobileMoreOpen && (
-        <div className="fixed bottom-36 right-4 z-50 flex flex-col gap-3 sm:hidden">
+        <div className="fixed right-4 bottom-36 z-50 flex flex-col gap-3 sm:hidden">
           {secondaryNavItems.map((item) => (
             <Link
               key={item.href}

@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <div className="w-full overflow-clip bg-[#F9F4F2]">
-      <div className="mx-auto max-w-screen-xl">
+      <div className="mx-auto max-w-(--breakpoint-xl)">
         <div className="relative sm:overflow-hidden sm:rounded-2xl">
           <div className="relative px-6 pt-10 sm:pt-12 lg:px-8 lg:pt-16">
             <div className="mx-auto max-w-lg">

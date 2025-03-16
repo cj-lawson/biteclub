@@ -2,8 +2,8 @@ import { signOut } from "~/app/actions/auth/index";
 
 export default function AppNavbar() {
   return (
-    <header className="sticky top-0 z-10 w-full px-3 py-2 font-[family-name:var(--font-geist-sans)] backdrop-blur">
-      <div className="container ml-auto mr-auto flex h-14 max-w-screen-lg items-center">
+    <header className="sticky top-0 z-10 w-full px-3 py-2 font-[family-name:var(--font-geist-sans)] backdrop-blur-sm">
+      <div className="container ml-auto mr-auto flex h-14 max-w-(--breakpoint-lg) items-center">
         {/* <nav className="flex items-center space-x-4 lg:space-x-6"></nav> */}
         <div className="flex flex-1 items-center justify-end space-x-4">
           <div className="space-x-4">

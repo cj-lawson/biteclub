@@ -10,7 +10,7 @@ export default function NewRecipePage() {
 
   return (
     <div className="min-w-screen-xl flex min-h-screen flex-col justify-items-center gap-16 px-3 pb-20 font-[family-name:var(--font-geist-sans)]">
-      <div className="container relative ml-auto mr-auto max-w-screen-lg">
+      <div className="container relative ml-auto mr-auto max-w-(--breakpoint-lg)">
         <RecipeForm onSubmit={handleSubmit} />
       </div>
     </div>

@@ -68,7 +68,7 @@ export default function SignUp() {
             <button
               type="submit"
               disabled={isPending}
-              className="bg-brand-500 flex w-full justify-center rounded-full px-3 py-3 text-sm/6 font-semibold text-white shadow-sm hover:brightness-125 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="bg-brand-500 flex w-full justify-center rounded-full px-3 py-3 text-sm/6 font-semibold text-white shadow-xs hover:brightness-125 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Create free account
             </button>
